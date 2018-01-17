@@ -3,7 +3,7 @@ import {Sequelize} from 'sequelize-typescript';
 import User from './models/User'
 
 
-class Db {
+export class Db {
   sequelize: Sequelize
   User = User
   constructor() {
