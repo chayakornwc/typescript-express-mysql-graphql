@@ -3,9 +3,14 @@ import { Sequelize } from 'sequelize-typescript';
 import User from './models/User'
 import config from '../config'
 
+class Models {
+  static User = User
+}
+
 export default class Db {
   sequelize: Sequelize
-  User = User
+  models = Models
+  
   constructor() {
     this.sequelize =  new Sequelize({
       database: config.MYSQL_DATABASE,
