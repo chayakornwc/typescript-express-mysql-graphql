@@ -8,7 +8,17 @@
     "sourceMap": true,
     "allowJs": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "es6",
+      "esnext"
+    ],
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "build",
+    ".git"
+  ]
 }

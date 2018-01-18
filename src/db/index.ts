@@ -1,7 +1,6 @@
 
-import {Sequelize} from 'sequelize-typescript';
+import { Sequelize } from 'sequelize-typescript';
 import User from './models/User'
-
 
 export class Db {
   sequelize: Sequelize
