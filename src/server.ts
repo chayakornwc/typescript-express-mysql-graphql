@@ -27,8 +27,8 @@ type ContextType = {
 const resolvers = {
   Query: { users: (doc: any, args: any, { db }: ContextType) => db.models.User.findAll() },
   Mutation: {
-    createUser() {
-
+    createUser(root: any, { name, age }: { name: string, age: number }, context: ContextType) {
+      return db.models.User.create({ name, age })
     }
   }
 }
