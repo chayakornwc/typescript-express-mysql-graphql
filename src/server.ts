@@ -1,23 +1,16 @@
 import * as express from 'express'
-import db, { Db } from './db'
+import Db from './db'
+
 const bodyParser = require('body-parser');
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 const { makeExecutableSchema } = require('graphql-tools');
 
 const app = express()
+const db = new Db()
 
 app.get('/', async (req: express.Request, res: express.Response) => {
   res.json({ message: 'Hello, from Express with TypeScript' })
 })
-
-app.get('/createUser', async (req: express.Request, res: express.Response) => {
-  const user = db.User.build()
-  user.name = "Net"
-  user.age = 29
-  await user.save()
-  res.json(user.toJSON())
-})
-
 
 // The GraphQL schema in string form
 const typeDefs = `
